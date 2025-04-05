@@ -1,7 +1,6 @@
 import { useAuth } from "../auth/AuthContext";
-
-import ActivityList from "./ActivityList";
-import ActivityForm from "./ActivityForm";
+import ActivityList from "./ActivityList.jsx";
+import ActivityForm from "./ActivityForm.jsx";
 
 /**
  * All users can see a list of activities.
