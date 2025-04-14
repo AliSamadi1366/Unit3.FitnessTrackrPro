@@ -3,6 +3,9 @@ import useQuery from "../api/useQuery";
 import { useAuth } from "../auth/AuthContext";
 import useMutation from "../api/useMutation";
 
+import SetForm from "./sets/SetForm";
+import SetList from "./sets/SetList";
+
 export default function RoutineDetails() {
   const { token } = useAuth();
   const { id } = useParams();
@@ -19,6 +22,8 @@ export default function RoutineDetails() {
       <p>by {routine.creatorName}</p>
       <p>{routine.goal}</p>
       {token && <DeleteButton id={routine.id} />}
+      <SetList sets={routine.sets} />
+      {token && <SetForm routineId={id} />}
     </>
   );
 }
